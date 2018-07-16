@@ -8,10 +8,10 @@
         dest: "/root/apache-tomcat-9.0.10/webapps/gameoflife-0.0.1.war"
         mode: 0777
         
-    - name: Start Tomcat
+    - name: start tomcat
       shell: "cd /root/apache-tomcat-9.0.10/bin; ./startup.sh"
       become: true
       
-    - name: executing war
-      shell: "cd /tmp/gamefolder/; nohup java -jar gameoflife-0.0.1.war &"
+    - name: execute war
+      shell: "cd /root/apache-tomcat-9.0.10/webapps; nohup java -jar gameoflife-0.0.1.war &"
       become: true
