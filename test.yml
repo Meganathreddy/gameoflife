@@ -2,17 +2,16 @@
 - hosts: dev1
   gather_facts: no
   tasks:
-    - name: creating a directory
-      file:
-        path: /tmp/gamefolder
-        state: directory
-
     - name: copy war file 
       copy: 
         src: "{{ workspace }}/gameoflife-0.0.1.war"
-        dest: "/tmp/gamefolder/gameoflife-0.0.1.war"
+        dest: "/root/apache-tomcat-9.0.10/webapps/gameoflife-0.0.1.war"
         mode: 0777
-
+        
+    - name: Start Tomcat
+      shell: "cd /root/apache-tomcat-9.0.10/bin; ./startup.sh"
+      become: true
+      
     - name: executing war
       shell: "cd /tmp/gamefolder/; nohup java -jar gameoflife-0.0.1.war &"
       become: true
