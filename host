@@ -1,1 +1,1 @@
-abc ansible_ssh_host=118.191.170.168 ansible_ssh_user=root
+abc ansible_ssh_host=18.191.170.168 ansible_ssh_user=root
