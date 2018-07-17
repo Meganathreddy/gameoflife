@@ -8,7 +8,6 @@
         src: "/root/.jenkins/workspace/val_pipeline/target/gameoflife-0.0.1.war"
         dest: "/root/apache-tomcat-9.0.10/webapps/gameoflife-0.0.1.war"
         mode: 0777
-        
-    - name: start tomcat
-      shell: "cd /root/apache-tomcat-9.0.10/bin; setsid sh -i -c startup.sh"
-      become: true
+      
+    - name: startup tomcat
+      shell: setsid /bin/sh -i -c "/root/apache-tomcat-9.0.10/bin/startup.sh"
