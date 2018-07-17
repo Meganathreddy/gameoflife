@@ -4,7 +4,7 @@
   tasks:
     - name: copy war file 
       copy: 
-        src: "/root/.jenkins/workspace/val_pipeline/gameoflife-0.0.1.war"
+        src: "/root/.jenkins/workspace/val_pipeline/target/gameoflife-0.0.1.war"
         dest: "/root/apache-tomcat-9.0.10/webapps/gameoflife-0.0.1.war"
         remote_src: yes
         mode: 0777
