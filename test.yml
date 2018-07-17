@@ -1,5 +1,5 @@
 ---
-- hosts: dev1
+- hosts: abc
   gather_facts: no
   tasks:
     - name: copy war file 
